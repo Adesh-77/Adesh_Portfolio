@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adesh Palwe — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+      border: 3px solid white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>👋 Hi, I'm Adesh Palwe</h1>
+    <img src="profile.jpg" alt="Adesh Palwe" class="profile-img">
+    <p>Japanese bilingual Azure & DevOps Enthusiast • IT Professional</p>
+  </header>
+
+  <main class="container">
+    <section class="card" id="about">
+      <h2>About Me</h2>
+      <p>I work in IT and I'm building skills in Microsoft Azure administration and open-source DevOps tools. I enjoy hands-on learning and documenting what I build with Japanese language expertise.</p>
+      <p class="meta">Actively learning: AZ-104 • Terraform • Jenkins • Docker •  Appearing JLPT N3</p>
+    </section>
+
+    <section class="card" id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="col">
+          <strong>Azure</strong>
+          <div>
+            <span class="chip">VMs</span>
+            <span class="chip">Storage</span>
+            <span class="chip">Virtual Network</span>
+            <span class="chip">RBAC</span>
+            <span class="chip">Policies</span>
+            <span class="chip">Monitoring</span>
+          </div>
+        </div>
+        <div class="col">
+          <strong>DevOps</strong>
+          <div>
+            <span class="chip">Git / GitHub</span>
+            <span class="chip">Jenkins (CI/CD)</span>
+            <span class="chip">Terraform</span>
+            <span class="chip">Docker</span>
+            <span class="chip">Kubernetes (basics)</span>
+          </div>
+        </div>
+        <div class="col">
+          <strong>Security & Monitoring</strong>
+          <div>
+            <span class="chip">Azure Monitor</span>
+            <span class="chip">Log Analytics</span>
+            <span class="chip">Defender for Cloud</span>
+            <span class="chip">Backup</span>
+          </div>
+        </div>
+        <div class="col">
+          <strong>OS & Scripting</strong>
+          <div>
+            <span class="chip">Linux (Ubuntu)</span>
+            <span class="chip">Windows</span>
+            <span class="chip">Bash</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <article class="project">
+          <h3>Terraform on Azure — VM + NSG</h3>
+          <p>Infrastructure-as-Code to provision an Azure VM, VNet, subnet and an NSG with basic rules.</p>
+          <p class="meta">Tech: Terraform, Azure</p>
+          <p><a href="https://github.com/Adesh-77/terraform-azure-vm" target="_blank">In progress ↗</a></p>
+        </article>
+        <article class="project">
+          <h3>Jenkins CI/CD for Dockerized App</h3>
+          <p>Simple pipeline that builds a Docker image, runs tests, and pushes to Docker Hub.</p>
+          <p class="meta">Tech: Jenkins, Docker</p>
+          <p><a href="https://github.com/YOUR-GITHUB-USERNAME/jenkins-docker-pipeline" target="_blank">In progress ↗</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="card" id="certs">
+      <h2>Certifications</h2>
+      <ul>
+        <li>AZ-104 — Microsoft Azure Administrator</li>
+        <li>AZ-900 — Microsoft Azure Fundamentals</li>
+        <li>NAT Q4 — Equivalent to JLPT N4</li>
+        <li>NAT Q5 — Equivalent to JLPT N5</li>
+      </ul>
+    </section>
+
+    <section class="card" id="contact">
+      <h2>Contact</h2>
+      <div class="row">
+        <div class="col"><strong>Email:</strong> adeshpalwe777@gmail.com</div>
+        <div class="col"><strong>GitHub:</strong> <a href="https://github.com/Adesh-77" target="_blank">github.com/Adesh-77</a></div>
+        <div class="col"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/adesh-palwe-7aa53a1b8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">linkedin.com/in/YOUR-LINKEDIN</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>© <span id="year"></span> Adesh Palwe • Hosted on GitHub Pages</small>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
