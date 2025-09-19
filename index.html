@@ -1,92 +1,176 @@
+html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adesh Palwe — Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
 
   <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #f0f4ff, #e0f7fa);
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      padding: 20px;
+      background: #4CAF50;
+      color: white;
+    }
+
     .profile-img {
-      width: 120px;
-      height: 120px;
+      width: 260px;
+      height: 260px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 16px;
-      border: 3px solid white;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      object-position: top center;
+      margin: 20px 0;
+      border: 6px solid #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .profile-img:hover {
+      transform: scale(1.1) rotate(2deg);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    footer {
+      padding: 10px;
+      background: #333;
+      color: white;
+      font-size: 14px;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(0,0,0,0.7);
+      animation: fadeIn 0.5s;
+    }
+
+    .modal-content {
+      background: #fff;
+      margin: 10% auto;
+      padding: 30px;
+      border-radius: 15px;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      animation: slideUp 0.6s ease;
+    }
+
+    .close {
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #333;
+    }
+    .close:hover {
+      color: red;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes slideUp {
+      from {transform: translateY(100px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+
+    .skills-block p {
+      font-size: 18px;
+      margin: 12px 0;
+    }
+    .skills-block b {
+      color: #4CAF50;
+    }
+
+    /* Inline Skills Section */
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .skill-card {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      font-size: 16px;
+      transition: transform 0.3s ease;
+    }
+    .skill-card:hover {
+      transform: scale(1.05);
+      background: #eafaf1;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>👋 Hi, I'm Adesh Palwe</h1>
-    <img src="Adesh77.jpeg" alt="Adesh Palwe" class="profile-img">
-    <p>Japanese bilingual Azure & DevOps Enthusiast • IT Professional</p>
+    <img src="Adesh7.jpeg" alt="Adesh Palwe" class="profile-img">
+    <p>🌏 Japanese bilingual | ☁️ Azure & DevOps Enthusiast | 💻 IT Professional</p>
   </header>
 
   <main class="container">
     <section class="card" id="about">
-      <h2>About Me</h2>
+      <h2>🙋 About Me</h2>
       <p>I work in IT and I'm building skills in Microsoft Azure administration and open-source DevOps tools. I enjoy hands-on learning and documenting what I build with Japanese language expertise.</p>
-      <p class="meta">Actively learning: AZ-104 • Terraform • Jenkins • Docker •  Appearing JLPT N3</p>
+      <p class="meta">📘 Actively learning: AZ-104 • Terraform • Jenkins • Docker • JLPT N3</p>
     </section>
 
+    <!-- Skills Section -->
     <section class="card" id="skills">
-      <h2>Skills</h2>
-      <div class="skills">
-        <div class="col">
-          <strong>Azure</strong>
-          <div>
-            <span class="chip">VMs</span>
-            <span class="chip">Storage</span>
-            <span class="chip">Virtual Network</span>
-            <span class="chip">RBAC</span>
-            <span class="chip">Policies</span>
-            <span class="chip">Monitoring</span>
-          </div>
-        </div>
-        <div class="col">
-          <strong>DevOps</strong>
-          <div>
-            <span class="chip">Git / GitHub</span>
-            <span class="chip">Jenkins (CI/CD)</span>
-            <span class="chip">Terraform</span>
-            <span class="chip">Docker</span>
-            <span class="chip">Kubernetes (basics)</span>
-          </div>
-        </div>
-        <div class="col">
-          <strong>Security & Monitoring</strong>
-          <div>
-            <span class="chip">Azure Monitor</span>
-            <span class="chip">Log Analytics</span>
-            <span class="chip">Defender for Cloud</span>
-            <span class="chip">Backup</span>
-          </div>
-        </div>
-        <div class="col">
-          <strong>OS & Scripting</strong>
-          <div>
-            <span class="chip">Linux (Ubuntu)</span>
-            <span class="chip">Windows</span>
-            <span class="chip">Bash</span>
-          </div>
-        </div>
+      <h2>💡 Skills</h2>
+      <div class="skills-list">
+        <div class="skill-card">☁️ <b>Azure</b><br> VMs • Storage • VNet • RBAC • Policies</div>
+        <div class="skill-card">⚙️ <b>DevOps</b><br> Git/GitHub • Jenkins • Terraform • Docker • Kubernetes</div>
+        <div class="skill-card">🔒 <b>Security</b><br> Azure Monitor • Log Analytics • Defender • Backup</div>
+        <div class="skill-card">🐧 <b>OS & Scripting</b><br> Linux (Ubuntu) • Windows • Bash</div>
       </div>
     </section>
 
     <section class="card" id="projects">
-      <h2>Projects</h2>
+      <h2>🚀 Projects</h2>
       <div class="projects">
         <article class="project">
-          <h3>Terraform on Azure — VM + NSG</h3>
+          <h3>☁️ Terraform on Azure — VM + NSG</h3>
           <p>Infrastructure-as-Code to provision an Azure VM, VNet, subnet and an NSG with basic rules.</p>
           <p class="meta">Tech: Terraform, Azure</p>
           <p><a href="https://github.com/Adesh-77/terraform-azure-vm" target="_blank">In progress ↗</a></p>
         </article>
         <article class="project">
-          <h3>Jenkins CI/CD for Dockerized App</h3>
+          <h3>⚙️ Jenkins CI/CD for Dockerized App</h3>
           <p>Simple pipeline that builds a Docker image, runs tests, and pushes to Docker Hub.</p>
           <p class="meta">Tech: Jenkins, Docker</p>
           <p><a href="https://github.com/YOUR-GITHUB-USERNAME/jenkins-docker-pipeline" target="_blank">In progress ↗</a></p>
@@ -95,7 +179,7 @@
     </section>
 
     <section class="card" id="certs">
-      <h2>Certifications</h2>
+      <h2>📜 Certifications</h2>
       <ul>
         <li>AZ-104 — Microsoft Azure Administrator</li>
         <li>AZ-900 — Microsoft Azure Fundamentals</li>
@@ -105,11 +189,11 @@
     </section>
 
     <section class="card" id="contact">
-      <h2>Contact</h2>
+      <h2>📬 Contact</h2>
       <div class="row">
         <div class="col"><strong>Email:</strong> adeshpalwe777@gmail.com</div>
         <div class="col"><strong>GitHub:</strong> <a href="https://github.com/Adesh-77" target="_blank">github.com/Adesh-77</a></div>
-        <div class="col"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/adesh-palwe-7aa53a1b8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">linkedin.com/in/YOUR-LINKEDIN</a></div>
+        <div class="col"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/adesh-palwe-7aa53a1b8">linkedin.com/in/adesh-palwe</a></div>
       </div>
     </section>
   </main>
@@ -118,8 +202,53 @@
     <small>© <span id="year"></span> Adesh Palwe • Hosted on GitHub Pages</small>
   </footer>
 
+  <!-- Skills Modal -->
+  <div id="skillsModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>💡 My Key Skills</h2>
+      <div class="skills-block">
+        <p>☁️ <b>Azure:</b> VMs • Storage • Virtual Network • RBAC • Policies • Monitoring</p>
+        <p>⚙️ <b>DevOps:</b> Git/GitHub • Jenkins (CI/CD) • Terraform • Docker • Kubernetes</p>
+        <p>🔒 <b>Security & Monitoring:</b> Azure Monitor • Log Analytics • Defender for Cloud • Backup</p>
+        <p>🐧 <b>OS & Scripting:</b> Linux (Ubuntu) • Windows • Bash</p>
+      </div>
+    </div>
+  </div>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    function openModal() {
+      document.getElementById("skillsModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("skillsModal").style.display = "none";
+    }
+
+    // Auto open skills modal on load
+    window.onload = function() {
+      setTimeout(openModal, 1200);
+    };
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      let modal = document.getElementById("skillsModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
   </script>
 </body>
 </html>
+```
+
+---
+
+✨ Now your portfolio does:
+
+* **On entry** → Automatic **skills popup** (modal with emojis, styled).
+* **On page** → A permanent **Skills section** (with attractive cards).
+
+Would you like me to **add progress bars or animated icons** inside the skills section so it looks like a professional CV dashboard?
